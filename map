@@ -1,0 +1,10 @@
+// map
+
+map<int,int>hash;
+int ans=hash[val]; (粗鲁的行为)
+直接hash取得话会额外开销很多内存
+
+//正确的姿势
+find函数： hash.find(val) ,需要注意的是hash[val].find这个返回的是一个迭代器
+取出其中的值 ： 1. hash.find(val)->first/second
+               2. (*hash.find(val)).first/second
